@@ -2,7 +2,9 @@ package com.yuziak.schooltest.domain;
 
 
 import jakarta.persistence.*;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "schools")
 public class School {
