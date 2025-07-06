@@ -5,23 +5,22 @@ import com.yuziak.schooltest.domain.SchoolType;
 import com.yuziak.schooltest.dto.SchoolRequestDto;
 import com.yuziak.schooltest.dto.SchoolResponseDto;
 import com.yuziak.schooltest.repo.SchoolRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/schools")
-@RequiredArgsConstructor
 public class SchoolController {
 
     private final SchoolRepository schoolRepository;
 
+    public SchoolController(SchoolRepository schoolRepository) {
+        this.schoolRepository = schoolRepository;
+    }
 
     @GetMapping
     public Page<SchoolResponseDto> getSchools(

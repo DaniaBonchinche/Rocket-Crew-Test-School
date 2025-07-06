@@ -11,7 +11,7 @@
 1. Спочатку зберіть backend проєкт у `.jar` файл:
 
 ```bash
-./mvnw clean package
+./mvn clean package -DskipTests
 ```
 
 2. Потім запустіть Docker Compose:
